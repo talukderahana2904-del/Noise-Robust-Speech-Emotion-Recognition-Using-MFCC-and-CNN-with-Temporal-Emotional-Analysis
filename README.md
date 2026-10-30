@@ -1,0 +1,2 @@
+# Noise-Robust-Speech-Emotion-Recognition-Using-MFCC-and-CNN-with-Temporal-Emotional-Analysis
+An audio-based speech emotion recognition system that uses deep learning to identify emotional patterns in speech and analyze how emotions evolve over time. The project combines audio feature extraction with a trained Convolutional Neural Network (CNN) to support emotion classification and temporal emotional analysis.
