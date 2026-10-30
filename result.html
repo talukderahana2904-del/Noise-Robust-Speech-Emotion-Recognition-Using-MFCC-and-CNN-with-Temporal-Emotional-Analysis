@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Result</title>
+    <style>
+        body {
+            background: #000;
+            color: white;
+            font-family: 'Segoe UI';
+            text-align: center;
+        }
+
+        .card {
+            margin-top: 40px;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            display: inline-block;
+            width: 80%;
+        }
+
+        h2 {
+            color: #00ffc3;
+            font-size: 40px;
+        }
+
+        .section {
+            margin-top: 30px;
+        }
+
+        img {
+            width: 80%;
+            border-radius: 10px;
+            margin-top: 10px;
+        }
+
+        audio {
+            margin-top: 10px;
+        }
+
+        .info {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .box {
+            background: #111;
+            padding: 15px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="card">
+
+        <h1>🎤 Emotion Analysis Result</h1>
+
+        <h2>{{emotion}}</h2>
+        <p>{{confidence}}% Confidence</p>
+
+        <div class="info">
+            <div class="box">⏱ Duration: {{duration}} sec</div>
+            <div class="box">🎧 Format: Audio</div>
+            <div class="box">🤖 Model: CNN+LSTM</div>
+        </div>
+
+        <div class="section">
+            <h3>🎧 Playback</h3>
+            <audio controls>
+                <source src="{{ url_for('uploaded_file', filename=audio) }}">
+            </audio>
+        </div>
+
+        <div class="section">
+            <h3>📊 Waveform</h3>
+            <img src="{{waveform}}">
+        </div>
+
+        <div class="section">
+            <h3>📈 Emotion Timeline</h3>
+            <img src="{{graph}}">
+        </div>
+
+        <br>
+        <a href="/" style="color:#00ffc3;">⬅ Analyze Another</a>
+
+    </div>
+
+</body>
+
+</html>
